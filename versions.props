@@ -1,0 +1,9 @@
+com.google.guava:* = 31.1-jre
+org.apache.iceberg:* = 1.2.1
+org.apache.spark:* = 3.3.2
+org.assertj:* = 3.23.1
+org.immutables:value = 2.9.2
+org.junit.jupiter:* = 5.8.1
+org.scala-lang:* = 2.12.10
+org.slf4j:* = 1.7.36
+software.amazon.awssdk:* = 2.20.5

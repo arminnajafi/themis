@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+    id 'scala'
+    id 'nebula.dependency-recommender'
+    id 'com.github.johnrengelman.shadow'
+}
+
+dependencies {
+    implementation project(':themis-core')
+    implementation project(':themis-spark')
+    implementation 'org.apache.iceberg:iceberg-spark-runtime-3.3_2.12'
+    implementation 'org.apache.iceberg:iceberg-aws'
+    implementation 'software.amazon.awssdk:s3'
+    implementation 'software.amazon.awssdk:kms'
+    implementation 'software.amazon.awssdk:iam'
+    implementation 'software.amazon.awssdk:glue'
+    implementation 'software.amazon.awssdk:dynamodb'
+    implementation 'software.amazon.awssdk:url-connection-client'
+    implementation 'software.amazon.awssdk:sts'
+
+    compileOnly 'org.scala-lang:scala-library'
+    compileOnly 'org.apache.spark:spark-sql_2.12'
+    compileOnly 'org.apache.spark:spark-hive_2.12'
+
+    testImplementation 'org.apache.spark:spark-sql_2.12'
+    testImplementation 'org.apache.spark:spark-hive_2.12'
+    testImplementation 'org.scala-lang:scala-library'
+    testImplementation 'org.assertj:assertj-core'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+shadowJar {
+    zip64 true
+}

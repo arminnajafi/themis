@@ -1,0 +1,18 @@
+plugins {
+    id 'java'
+    id 'nebula.dependency-recommender'
+}
+
+dependencies {
+    implementation 'org.slf4j:slf4j-api'
+    implementation 'com.google.guava:guava'
+
+    testImplementation 'org.slf4j:slf4j-simple'
+    testImplementation 'org.assertj:assertj-core'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+test {
+    useJUnitPlatform()
+}
