@@ -1,8 +1,37 @@
+![themis-logo](https://github.com/jackye1995/themis/blob/master/themis-logo.png?raw=true)
+
 # Project Themis
 
 Project Themis is an open benchmarking framework for big data solutions.
 
-## Getting Started
+# Architecture
+
+Themis consists of 5 layers:
+
+## Layer 1: Spec
+
+Themis spec define necessary component for benchmarking, such as generative dataset, benchmark workflow and reporting.
+There are implementations of the spec in different languages such as Python and Java.
+
+## Layer 2: Artifacts
+
+Artifacts are materialized implementation of Themis spec that are required for benchmark execution,
+such as a Jar for Spark data generation application or a text file for a set of SQL queries to benchmark against.
+
+## Layer 3: CLI
+
+A Python CLI is used to orchestrate each step in a benchmark execution.
+
+## Layer 4: Airflow
+
+Apache Airflow is used to define a complete benchmark workflow as a DAG,
+and automate the orchestration by directly invoking the CLI to execute commands in the DAG.
+
+## Layer 5: CDK
+
+AWS CDK integration is provided for bootstrapping a Themis benchmark environment on AWS.
+
+# Getting Started
 
 Build shadow jar:
 
